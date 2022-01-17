@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    @apply h-auto min-h-screen bg-gray-300;
+  }
+  .nav-item {
+    @apply hover:bg-gray-100 bg-transparent rounded-sm px-6 py-3 cursor-pointer border-b-2 border-transparent transition ease-in;
+  }
+  .nav-item.active {
+    @apply border-green-600;
+  }
+  .submenu {
+    @apply hidden bg-white absolute mt-2 shadow-md;
+  }
+  .submenu-item {
+    @apply hover:bg-gray-100 bg-transparent rounded-sm px-6 py-3 cursor-pointer border-b-2 border-transparent transition ease-in;
+  }
+  .submenu-item.active {
+    @apply bg-green-500 text-white;
+  }
+  .main-content {
+    @apply bg-white shadow-md m-8 p-8 rounded-lg;
+  }
+  .image-animation {
+    @apply object-cover h-full scale-110 hover:scale-100 hover:rotate-0 rotate-6 hover:grayscale-0 grayscale transition-transform duration-300 ease-in-out;
+  }
+}
+
+@font-face {
+  font-family: 'TG Siloka Sundanese';
+  src: local('TG Siloka Sundanese'),
+    url('../fonts/TG Siloka Sundanese.otf') format('otf');
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+
+.page-enter,
+.page-leave-to {
+  transform: scale(0);
+  opacity: 0;
+  /* scale: 0; */
+}
